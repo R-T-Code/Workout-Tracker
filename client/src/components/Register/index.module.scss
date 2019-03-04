@@ -1,0 +1,20 @@
+@import "../../sass/vars";
+@import "../../sass/mixins";
+.register{
+    
+    
+    input{
+        @include input;
+        
+    }
+    label{
+        @include label;
+    }
+    .field{
+        position: relative;
+        margin-bottom: 26px;
+        span{
+            color: rgb(255, 88, 88);
+        }
+    }
+}

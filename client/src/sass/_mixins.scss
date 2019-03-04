@@ -1,0 +1,27 @@
+@mixin input{
+    border: 1px inset $color-2;
+    box-shadow: 0 0 5px 0px $color-1;
+    background: transparent;
+    border-radius: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    color: inherit; 
+    margin-bottom: 20px;
+    appearance: none;
+    font-family: inherit;
+}
+
+@mixin label {
+    position: absolute;
+    top: -16px;
+    left: 10px;
+    font-size: 14px;
+    padding: 0 4px;
+    border-radius: 4px;
+    color: $color-2;
+    font-weight: 500;
+    display: inline-block;
+}

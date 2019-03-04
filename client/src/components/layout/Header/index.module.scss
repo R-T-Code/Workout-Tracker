@@ -1,0 +1,36 @@
+@import "../../../sass/vars";
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+    align-items: center;
+    width: 90%;
+    color: $color-1;
+
+    .box{
+        display: flex;
+    }
+    a{
+        text-decoration: none;
+        font-weight: 500;
+        user-select: none;
+        outline: none;
+        margin-left: 15px;
+        color: inherit;
+    }
+    .logo{
+        width: 40px;
+    }
+
+    
+    .name{
+        margin-right: 20px;
+    }
+    .history{
+        width: 40px;
+        height: 40px;
+    }
+}

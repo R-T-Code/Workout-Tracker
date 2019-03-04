@@ -1,0 +1,14 @@
+window -> process
+document -> global
+
+// specialos komandos
+npm start
+npm test
+
+// custom komandos
+npm run dev
+
+mongoose yra ORM(object ralted maping)
+
+.env used for setup environmet variables - dotenv lib
+accses as process.env.VARIABLE_NAME
