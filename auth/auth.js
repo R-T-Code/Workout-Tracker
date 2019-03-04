@@ -11,13 +11,11 @@ module.exports = (req,res,next) => {
     // verify token, if its invalid, it makes server error
     try{
         const user = jwt.verify(token, process.env.JWT_KEY);
-        console.log(user);
         // req.user goes to next functions so we have access to req.user
         req.user=user;
         // if token is correct, call next function in router
         next()
     } catch(e){
-        console.log(e)
         res.status(400).send('unauthorized');
     }
 }

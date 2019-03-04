@@ -13,7 +13,6 @@ const auth = require('../auth/auth');
     * desc register new user
 */
 router.post('/api/auth/register', async(req, res) => {
-    console.log(req.body);
     // Search if user exists (findOne find one object)
     let user = await User.findOne({email: req.body.email.toLowerCase()});
     // Check if user exists
@@ -27,7 +26,11 @@ router.post('/api/auth/register', async(req, res) => {
     await user.save();
 
 
-    res.send('Registered');
+    // if all ok, send JWT
+    user = _.omit(user.toJSON(), ['password', '__v']); //omit pass and __v
+    const token = jwt.sign(user, process.env.JWT_KEY);
+    // send token to user
+    res.send(token);
 });
 
 /*

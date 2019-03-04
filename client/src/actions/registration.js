@@ -10,7 +10,6 @@ export function onInputChange(e){
 }
 
 export function onRegister (e, data, history){
-    console.log(data);
     e.preventDefault()
 
     // Front end validation
@@ -28,13 +27,16 @@ export function onRegister (e, data, history){
 
     return async function(dispatch){
         try{
-            await axios.post('/api/auth/register', data);
+            const res = await axios.post('/api/auth/register', data);
+            localStorage.setItem('auth-token', res.data);
+            // set axios headers to user token for all requests
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + res.data;
             // if all ok dispatch obj to reducer and redirect
             dispatch({
                 type: types.REGISTRATION_FORM_SUCCESS,
                 data
             });
-            history.push('/login');
+            history.push('/');
         } catch (e){
             console.log(e.response);
             if(e.response.data === 'that user exists') errors.email = 'That user exists';
