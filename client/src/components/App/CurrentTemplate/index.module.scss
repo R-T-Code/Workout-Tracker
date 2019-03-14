@@ -1,34 +1,123 @@
-.current{
-    
+@import '../../../sass/vars';
+@import '../../../sass/mixins';
+
+.current{ 
     text-align: center;
+    height: 80vh;
+    overflow: auto;
 }
+
 .form{
     width: 80%;
     margin: auto;
     font-size: 20px;
     margin-bottom: 10px;
+    position: relative;
 }
 .input{
-    font-size: inherit;
-    color: inherit;
-    background-color: black;
-    padding: 5px 10px;
-    border: 1px solid white;
-    outline: none;
+    @include input;
 }
-.button{
-    color: white;
-    font-size: inherit;
-    border: 1px solid white;
-    background-color: black;
-    padding: 5px 10px;
-    outline: none;
+.label{
+    @include label;
 }
-
 .exc{
     display: flex;
     justify-content: space-between;
     width: 90%;
     margin: auto;
 
+}
+.create{
+    width: 60%;
+    font-size: 16px;
+    background: $color-primary;
+    border-radius: 15px;
+    line-height: 36px;
+    border: 1px inset $color-secondary;
+    box-sizing: border-box;
+    color: $color-secondary;
+    user-select: none;
+    outline:none;
+    transition: .2s;
+    text-align: center;
+    font-family: inherit;
+    &:active{
+        background: $color-secondary;
+        color: $color-primary;
+        box-shadow: none;
+    }
+}
+.exc{
+    width: 80%;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px inset white;
+}
+.name{
+    padding: 0px 10px;
+    font-weight: 300;
+}
+.delete{
+    background: $color-primary;
+    padding: 0 10px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    color: $color-secondary;
+    user-select: none;
+    outline:none;
+    transition: .2s;
+    border: none;
+    &:active{
+        background: $color-secondary;
+        color: $color-primary;
+    }
+}
+.btn_update{
+    width: 40%;
+    font-size: 16px;
+    background: $color-primary;
+    border-radius: 15px 0 0 15px;
+    line-height: 36px;
+    border: 1px inset $color-secondary;
+    box-sizing: border-box;
+    color: $color-secondary;
+    user-select: none;
+    outline:none;
+    transition: .2s;
+    text-align: center;
+    font-family: inherit;
+    &:active{
+        background: $color-secondary;
+        color: $color-primary;
+        box-shadow: none;
+    }
+}
+.btn_delete{
+    width: 40%;
+    font-size: 16px;
+    background: $color-primary;
+    border-radius: 0 15px 15px 0;
+    line-height: 36px;
+    border: 1px inset $color-secondary;
+    box-sizing: border-box;
+    color: $color-secondary;
+    user-select: none;
+    outline:none;
+    transition: .2s;
+    text-align: center;
+    font-family: inherit;
+    &:active{
+        background: $color-secondary;
+        color: $color-primary;
+        box-shadow: none;
+    }
 }

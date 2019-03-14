@@ -1,5 +1,7 @@
+@import '../../../sass/vars';
+@import '../../../sass/mixins';
+
 .new{
-    
     text-align: center;
 }
 .form{
@@ -7,20 +9,11 @@
     margin: auto;
     font-size: 20px;
     margin-bottom: 10px;
+    position: relative;
 }
 .input{
-    font-size: inherit;
-    color: inherit;
-    background-color: black;
-    padding: 5px 10px;
-    border: 1px solid white;
-    outline: none;
+    @include input;
 }
-.button{
-    color: inherit;
-    font-size: inherit;
-    border: 1px solid white;
-    background-color: black;
-    padding: 5px 10px;
-    outline: none;
+.label{
+    @include label;
 }

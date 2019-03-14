@@ -1,5 +1,6 @@
+@import '../../../sass/vars';
+
 .current{
-    
     text-align: center;
 }
 .form{
@@ -8,27 +9,96 @@
     font-size: 20px;
     margin-bottom: 10px;
 }
-.input{
-    font-size: inherit;
-    color: inherit;
-    background-color: black;
-    padding: 5px 10px;
-    border: 1px solid white;
-    outline: none;
-}
-.button{
-    color: white;
-    font-size: inherit;
-    border: 1px solid white;
-    background-color: black;
-    padding: 5px 10px;
-    outline: none;
-}
-
 .exc{
     display: flex;
     justify-content: space-between;
     width: 90%;
     margin: auto;
-
+}
+.exercise{
+    margin: auto;
+    padding: 0 10px;
+    width: 80%;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px inset white;
+}
+.exercise_name{
+    margin: auto;
+    flex: 0 0 100%;
+    padding: 5px 0;
+}
+.input_container{
+    margin-top: 30px;
+    position: relative;
+}
+.input{
+    border: 1px inset white;
+    background: transparent;
+    border-radius: 10px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    color: inherit; 
+    appearance: none;
+    font-family: inherit;
+}
+.label{
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    font-size: 14px;
+    padding: 0 4px;
+    border-radius: 4px;
+    display: inline-block;
+}
+.add{
+    width: 100%;
+    font-size: 16px;
+    background: $color-secondary;
+    border-radius: 15px;
+    border: 1px inset $color-primary;
+    box-sizing: border-box;
+    color: $color-primary;
+    user-select: none;
+    outline:none;
+    transition: .2s;
+    text-align: center;
+    font-family: inherit;
+    margin: 10px 0;
+    &:active{
+        background: $color-primary;
+        color: $color-secondary;
+        box-shadow: none;
+    }
+}
+.btnFinish{
+    width: 80%;
+    font-size: 16px;
+    background: $color-primary;
+    border-radius: 15px;
+    line-height: 36px;
+    box-sizing: border-box;
+    color: $color-secondary;
+    user-select: none;
+    outline:none;
+    transition: .2s;
+    text-align: center;
+    font-family: inherit;
+    margin: 10px 0;
+    &:active{
+        background: $color-secondary;
+        color: $color-primary;
+        box-shadow: none;
+    }
 }

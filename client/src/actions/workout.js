@@ -17,15 +17,23 @@ export function addSet(name, weight, reps){
     }
 }
 
+export function deleteSet(excIndex, setIndex){
+    return {
+        type: types.DELETE_SET,
+        excIndex,
+        setIndex
+    }
+}
+
 export function finishWorkout(name, exercises, history){
     return async function(dispatch){
         try {
-            const res = await axios.post('/api/workouts', {name, exercises, duration: 123});
+            await axios.post('/api/workouts', {name, exercises, duration: 123});
             history.push('/');
             dispatch({
                 type: types.FINISH_WORKOUT,
                 message: 'workout finished!'
-            })
+            });
         } catch(e) {
             console.log(e.response);
             dispatch({
@@ -34,6 +42,15 @@ export function finishWorkout(name, exercises, history){
         }
     }
 }   
+
+export function loadWorkoutName(name){
+    return {
+        type: types.LOAD_WORKOUT_NAME,
+        name
+    }
+}
+
+
 
 // export function onMoodChange(e){
 //     return{

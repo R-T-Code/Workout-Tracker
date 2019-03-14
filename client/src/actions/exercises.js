@@ -7,3 +7,11 @@ export function createExc(name, workout){
         workout
     }
 }
+
+export function loadExercises(data){
+    return{
+        type: types.LOAD_EXERCISES,
+        data
+    }
+}
+

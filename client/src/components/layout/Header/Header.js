@@ -9,16 +9,16 @@ import history from '../../../assets/history_logo.svg';
 const Header = (props) => {
   return (
     <header className={style.header}>
-      <Link to='/'><img className={style.logo} src={logo} alt=""/></Link>
+      <Link to='/'><img className={style.logo} src={logo} alt="logo"/></Link>
       {!props.auth.name ?
         <div className={style.box}>
           <Link to='/login'>Login</Link>
           <Link to='/register'>Register</Link>
         </div> :
         <div className={style.box}>
-          <Link to="/history"><img src={history} className={style.history}/></Link>
-          <p className={style.name}>{props.auth.name}</p>
-          <i style={{fontSize:'20px'}} onClick={() => props.logout(props.history)} className="fas fa-sign-out-alt"/>
+          <Link to="/history"><img src={history} className={style.history} alt="history"/></Link>
+          <p className={style.name}>Give It Your Best! <br/> {props.auth.name}</p>
+          <i onClick={() => props.logout(props.history)} className="fas fa-sign-out-alt"/>
         </div>
       }
 

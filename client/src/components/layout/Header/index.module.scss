@@ -8,29 +8,31 @@
     margin-bottom: 20px;
     align-items: center;
     width: 90%;
-    color: $color-1;
+    color: $color-secondary;
 
     .box{
         display: flex;
+        align-items: center;
     }
     a{
         text-decoration: none;
-        font-weight: 500;
         user-select: none;
         outline: none;
         margin-left: 15px;
         color: inherit;
     }
-    .logo{
-        width: 40px;
-    }
-
-    
     .name{
-        margin-right: 20px;
+        margin: 0 20px;
+        text-align: center;
     }
-    .history{
-        width: 40px;
-        height: 40px;
-    }
+}
+.history{
+    width: 30px;
+    height: 40px;
+}
+.logo{
+    width: 50px;
+}
+i{
+    font-size: 30px;
 }

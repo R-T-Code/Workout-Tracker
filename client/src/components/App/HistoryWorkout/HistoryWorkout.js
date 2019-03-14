@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import style from './index.module.scss';
+import ContentWrapper from '../../common/ContentWrapper/ContentWrapper';
 
 class HistoryWorkout extends Component {
 
@@ -21,24 +23,24 @@ class HistoryWorkout extends Component {
     const exercises = state.workout.exercises.map((exc,i)=>{
         const sets = exc.sets.map((set, index)=>{
             return (
-                <li key={index}>{set.weight} kg / {set.reps} x</li>
+                <li key={index}>{set.weight} kg - {set.reps}x</li>
             )
         })
         return (
-            <div key={i}>
-                <h2 >{exc.name}</h2>
-                <ul >
+            <div key={i} className={style.entry}>
+                <p className={style.excName}>{exc.name}</p>
+                <ol type="I" className={style.list}>
                     {sets}
-                </ul>
+                </ol>
             </div>
         )
     })
 
     return (
-      <div>
-          <h1 >{state.workout.name}</h1>
+      <ContentWrapper>
+          <h1 className={style.heading}>{state.workout.name}</h1>
         {exercises}
-      </div>
+      </ContentWrapper>
     )
   }
 }

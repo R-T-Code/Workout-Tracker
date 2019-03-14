@@ -4,7 +4,7 @@ import style from './index.module.scss';
 import { connect } from 'react-redux';
 import * as actions from '../../../actions/templates';
 import Error from '../../common/Error/Error';
-
+import Button1 from '../../common/Button1/Button1';
 
 class NewTemplate extends Component {
     state={
@@ -39,15 +39,18 @@ class NewTemplate extends Component {
             <div className={style.new}>
                 <Heading1 >Name your workout</Heading1>
                 <form onSubmit={this.onFormSubmit} className={style.form}>
+                    <label 
+                        className={style.label}
+                        htmlFor="workout-name">Workout Name</label>
                     <input 
+                        id="workout-name"
                         value={this.state.name}
                         onChange={this.onInputChange}
                         className={style.input}
                         type='text' 
-                        placeholder='workout name'
                         name='name'
                         autoComplete='new-name'/>
-                    <button className={style.button}>Create</button>
+                    <Button1 className={style.button}>Create</Button1>
                     <Error error={this.state.error}/>
                 </form>
                 <small className={style.small}>Ex.: Chest Day, Bicep/Tricep, Legs</small>

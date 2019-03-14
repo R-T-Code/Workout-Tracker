@@ -5,6 +5,9 @@
     margin: auto;
     padding: 20px 10px;
     border-radius: 20px;
-    background-color: rgba($color-4, $alpha: 0.7); 
-    box-shadow: 0 0 2px 0px $color-1;
+    background-color: rgba(black, $alpha: .6); 
+    text-align: center;
+    overflow-y: auto;
+    height: auto;
+    max-height: 80vh;
 }

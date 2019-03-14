@@ -9,6 +9,12 @@ export function createTemplate(name){
 }
 
 export function deleteTemplate(name, history){
+  // Delete local storage only if name is === to current template name
+  if(localStorage.getItem('workout') === name){
+    localStorage.removeItem('exercises');
+    localStorage.removeItem('workout');
+  }
+
  return async function(dispatch){
    try{
     await axios.delete('/api/templates/'+name);
@@ -94,6 +100,20 @@ export function saveTemplate(template, history){
 }
 
 export function updateTemplate(template, history){
+
+  // Update local storage with new exercises data
+  const savedExercises = JSON.parse(localStorage.getItem('exercises'));
+  if(savedExercises){
+    const data = [];
+    template.exercises.forEach((item, i) => {
+        let sets = [];
+        if(savedExercises[i]) sets = savedExercises[i].sets;
+        data.push({...item, sets});
+      });
+      localStorage.setItem('exercises', JSON.stringify(data));
+  }
+
+
   return async function (dispatch){
     try{
       await axios.put('/api/templates', template);

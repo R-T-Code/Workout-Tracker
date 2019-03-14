@@ -1,24 +1,38 @@
 @import "../../../sass/vars";
 
 
-.create{
-    width: 100%;
-    font-size: 16px;
-    background: rgba($color-5, $alpha: 0.5);
-    border-radius: 15px;
-    line-height: 36px;
-    border: 1px inset $color-2;
-    box-shadow: 0 0 5px 0px $color-1;
+.template{
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // box-shadow: 0 0 4px 0px $color-secondary;
+    background: transparent;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 20px;
     box-sizing: border-box;
-    color: $color-2;
-    font-weight: 500;
+    border: 1px inset white;
+}
+
+.name{
+    padding: 5px 10px;
+}
+
+.edit{
+    background: $color-primary;
+    padding: 0 10px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    color: $color-secondary;
     user-select: none;
     outline:none;
     transition: .2s;
-    text-align: center;
     &:active{
-        background: rgba($color-1, $alpha: 0.3);
-        color: $color-5;
+        background: $color-secondary;
+        color: $color-primary;
         box-shadow: none;
     }
 }
