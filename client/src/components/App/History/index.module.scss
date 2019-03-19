@@ -1,5 +1,9 @@
+@import '../../../sass/vars';
+
 .heading{
     margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 .entry{
     font-size: 18px;
@@ -14,7 +18,46 @@
     border: 1px inset white;
     padding: 5px 10px;
 }
+.date{
+    flex-grow: 1;
+    text-align: right;
+}
+.close{
+    flex-basis: 10px;
+    margin-left: 10px;
+    padding: 0 10px;
+    font-size: 16px;
+    background: $color-primary;
+    color: $color-secondary;
+    border-radius: 10px;
+}
 .edit{
     float: right;
     font-size: 16px;
+    background: $color-primary;
+    color: $color-secondary;
+    padding: 0 15px;
+    align-self: center;
+    border-radius: 10px;
+}
+
+.button{
+    width: 100%;
+    font-size: 16px;
+    background: $color-secondary;
+    border-radius: 15px;
+    line-height: 36px;
+    border: 1px inset $color-primary;
+    box-sizing: border-box;
+    color: $color-primary;
+    user-select: none;
+    outline:none;
+    transition: .2s;
+    text-align: center;
+    font-family: inherit;
+    &:active{
+        background: $color-primary;
+        color: $color-secondary;
+        box-shadow: none;
+    }
 }

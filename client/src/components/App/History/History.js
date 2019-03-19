@@ -42,8 +42,8 @@ import style from './index.module.scss';
                 className={style.entry}
                 key={i}>
                   <Link to={`/history/workout/`+workout._id}> {workout.name}</Link>
-                <span> {moment(workout.createdAt).format('YYYY MM DD')}</span>
-                {this.state.edit && <small onClick={() => this.deleteWorkout(workout._id)}>x</small>}
+                <span className={style.date}> {moment(workout.createdAt).format('YYYY MM DD')}</span>
+                {this.state.edit && <small className={style.close} onClick={() => this.deleteWorkout(workout._id)}>x</small>}
               </div>
           )
       });
